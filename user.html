@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User</title>
+    <link rel="stylesheet" href="./css/user.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jockey+One&family=Lalezar&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header id="header">
+      <nav>
+        <div class="logo">
+          <h1>Farmers Ready</h1>
+        </div>
+
+        <div class="links">
+          <a href="#">Home</a>
+          <a href="#">Farmers</a>
+          <a href="#">Contact</a>
+          <a href="#">Food</a>
+          <a href="#" class="resLink">Login</a>
+        </div>
+        <div class="actions">
+          <img src="./images/search.png" onclick="showSearchBar()" />
+          <img src="./images/heart.png" />
+          <img src="./images/user.png" />
+        </div>
+
+        <i class="fas fa-bars"></i>
+      </nav>
+
+      <div class="searchBar">
+        <input type="text" placeholder="Search" />
+        <i class="fas fa-x" onclick="hideSearchBar()"></i>
+      </div>
+
+      <div class="banner">
+        <h1>Empowering Farm<br />Efficiency</h1>
+        <div class="banner-img">
+          <img src="./images/banner.png" alt="" />
+        </div>
+        <div class="circle c1"></div>
+        <div class="circle c2"></div>
+        <div class="circle c3"></div>
+      </div>
+    </header>
+
+    <section class="category">
+      <h1>Search by <span>Categories</span></h1>
+      <div class="list">
+        <a href="#" class="card">
+          <img src="./images/crops.png" />
+          <div class="bg"></div>
+          <span>Crops</span>
+        </a>
+        <a href="#" class="card">
+          <img src="./images/vegi.png" />
+          <div class="bg"></div>
+          <span>Vegetables</span>
+        </a>
+        <a href="#" class="card">
+          <img src="./images/leafy.png" />
+          <div class="bg"></div>
+          <span>Leafy-vegies</span>
+        </a>
+        <a href="#" class="card">
+          <img src="./images/fruit.png" />
+          <div class="bg"></div>
+          <span>Fruits</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="best-seller">
+      <h1>Best Seller <br /><span>Foods</span></h1>
+      <div class="list">
+        <a href="#" class="card">
+          <img src="./images/fruit.png" />
+          <div class="bg"></div>
+          <span>Fruits</span>
+        </a>
+        <a href="#" class="card">
+          <img src="./images/fruit.png" />
+          <div class="bg"></div>
+          <span>Fruits</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="top-farmers">
+      <div class="list">
+        <div class="farmers">
+          <img src="./images/farmer 1.png" />
+          <span>Pranit Daphale 1</span>
+        </div>
+        <div class="farmers">
+          <img src="./images/farmer 1.png" />
+          <span>Pranit Daphale 2</span>
+        </div>
+        <div class="farmers">
+          <img src="./images/farmer 1.png" />
+          <span>Pranit Daphale 3</span>
+        </div>
+        <div class="farmers">
+          <h1>
+            Top <br />
+            <b>Farmers</b>
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <div class="messaging">
+      <img src="./images/chat.png" />
+    </div>
+
+    <footer>
+      <div class="d1">
+        <h1>Farmers Ready</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, quidem.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, ullam?
+        </p>
+      </div>
+      <div class="d2">
+        <h1>Pages</h1>
+        <ul>
+          <li>Food</li>
+          <li>Farmers</li>
+          <li>Contact Us</li>
+          <li>About Us</li>
+        </ul>
+      </div>
+      <div class="d3">
+        <h1>Pages</h1>
+        <ul>
+          <li>Food</li>
+          <li>Farmers</li>
+          <li>Contact Us</li>
+          <li>About Us</li>
+        </ul>
+      </div>
+      <div class="d4">
+        <h1>Pages</h1>
+        <ul>
+          <li>Food</li>
+          <li>Farmers</li>
+          <li>Contact Us</li>
+          <li>About Us</li>
+        </ul>
+      </div>
+    </footer>
+
+    <div class="copyright">
+      <span>Farmers Ready @Copyright All Right Reserved</span>
+    </div>
+  </body>
+
+  <script>
+    let menuBar = document.querySelector(".fa-bars");
+    let links = document.querySelector(".links");
+    menuBar.addEventListener("click", () => {
+      menuBar.classList.toggle("fa-close");
+      links.classList.toggle("active");
+    });
+
+    window.addEventListener("scroll", () => {
+      menuBar.classList.remove("fa-close");
+      links.classList.remove("active");
+      hideSearchBar();
+
+      let scrollPosition = window.scrollY;
+      let headerHeight = document.querySelector("header").offsetHeight - 200;
+      let messaging = document.querySelector(".messaging");
+      if (scrollPosition > headerHeight) {
+        messaging.classList.add("active");
+      } else {
+        messaging.classList.remove("active");
+      }
+    });
+
+    let showSearchBar = () => {
+      document.querySelector(".searchBar").classList.toggle("active");
+    };
+
+    let hideSearchBar = () => {
+      document.querySelector(".searchBar").classList.remove("active");
+      document.querySelector(".searchBar input").value = "";
+    };
+  </script>
+</html>

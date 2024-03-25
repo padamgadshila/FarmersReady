@@ -1,0 +1,529 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Jockey One", sans-serif;
+    /* "Lalezar" */
+}
+
+:root {
+    --background: #1D1D1D;
+    --text: #fff;
+    --black: #000;
+    --green: #3CCB25;
+    --width: 1350px;
+}
+
+body::-webkit-scrollbar {
+    background: #ccc;
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #0D1033;
+    border-radius: 10px;
+}
+
+header {
+    height: 660px;
+    background: var(--background);
+    overflow: hidden;
+    position: relative;
+}
+
+nav {
+    width: var(--width);
+    margin: 0 auto;
+    padding: 34px 50px 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo h1 {
+    font-size: 42px;
+    color: var(--text);
+}
+
+.links {
+    font-size: 24px;
+}
+
+.links a {
+    text-decoration: none;
+    margin: 0 15px;
+    color: var(--text);
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.actions img {
+    width: 32px;
+    height: 32px;
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+.banner {
+    margin: 20px auto 0 auto;
+    width: var(--width);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+.banner h1 {
+    font-size: 62px;
+    font-family: "Lalezar";
+    color: var(--text);
+}
+
+
+.circle {
+    position: absolute;
+    width: 838px;
+    height: 449px;
+    border-radius: 50%;
+    background: var(--text);
+}
+
+.c1 {
+    left: -70px;
+    bottom: -80%;
+}
+
+.c2 {
+    left: 30%;
+    bottom: -90%;
+}
+
+.c3 {
+    right: -280px;
+    bottom: -90%;
+}
+
+.searchBar {
+    position: absolute;
+    right: -100%;
+    width: 300px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .4s;
+    z-index: 1;
+}
+
+.searchBar.active {
+    right: 30px;
+}
+
+.searchBar input {
+    width: calc(100% - 55px);
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: none;
+    padding-left: 20px;
+    font-family: sans-serif;
+    font-size: 18px;
+    outline: none;
+}
+
+.fa-x {
+    padding: 17px 20px;
+    background: var(--green);
+    color: var(--text);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+}
+
+header,
+section,
+footer,
+.copyright {
+    width: var(--width);
+    margin: auto;
+}
+
+.category h1 {
+    font-size: 64px;
+    font-family: "Lalezar";
+    color: var(--black);
+    margin-left: 70px;
+}
+
+.category h1 span {
+    color: var(--green);
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--black);
+    background: var(--background);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 2px rgba(0, 0, 0, .2);
+}
+
+.card:hover {
+    box-shadow: 0 5px 2px var(--green);
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 70%;
+    background: #F5F5F5;
+}
+
+.card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 230px;
+    object-fit: contain;
+}
+
+.list {
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.card span {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.best-seller {
+    height: 400px;
+    background: linear-gradient(300deg, #341128, #0D1033, #004D79);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.best-seller h1 {
+    margin-left: 50px;
+    font-size: 64px;
+    font-family: "Lalezar";
+    color: var(--text);
+}
+
+.best-seller h1 span {
+    font-family: "Lalezar";
+    color: var(--green);
+}
+
+.best-seller .list {
+    padding-bottom: 0;
+}
+
+.best-seller .card {
+    margin: 0 10px;
+}
+
+.top-farmers .list {
+    margin-top: 50px;
+}
+
+.farmers {
+    width: 300px;
+    height: 300px;
+    background: #F5F5F5;
+    position: relative;
+    border-radius: 20px;
+}
+
+.farmers img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.farmers span {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    font-size: 20px;
+    transform: translate(-50%, 0%);
+}
+
+.farmers h1 {
+    color: var(--black);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+}
+
+.farmers b {
+    color: var(--green);
+}
+
+.farmers:last-child {
+    background: none;
+}
+
+footer {
+    height: 400px;
+    padding: 20px;
+    background: var(--background);
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+footer h1 {
+    margin-top: 50px;
+    color: var(--text);
+}
+
+.d1 {
+    position: relative;
+    width: 300px;
+}
+
+.d1::before {
+    position: absolute;
+    content: '';
+    top: -190px;
+    left: -120px;
+    width: 500px;
+    height: 350px;
+    background: var(--text);
+    border-radius: 50%;
+}
+
+.d1 h1 {
+    position: relative;
+    margin-left: 50px;
+    color: var(--black);
+    z-index: 1;
+}
+
+.d1 p {
+    margin-top: 80px;
+    color: var(--text);
+}
+
+footer ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+footer li {
+    color: var(--text);
+    font-size: 18px;
+}
+
+footer li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+footer div {
+    padding: 10px;
+    width: 250px;
+}
+
+.copyright {
+    margin-top: 2px;
+    background: #4E4A4A;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+nav .fa-bars {
+    display: none;
+}
+
+.resLink {
+    display: none;
+}
+
+.messaging {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    background: #4E4A4A;
+    padding: 20px;
+    border-radius: 50%;
+    z-index: 1;
+    bottom: 50px;
+    right: -120px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .4s;
+}
+
+.messaging.active {
+    right: 20px;
+    visibility: visible;
+    opacity: 1;
+}
+
+.messaging img {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width:400px) {
+
+    header,
+    section,
+    footer,
+    .best-seller,
+    .copyright {
+        width: 100%;
+        margin: auto;
+    }
+
+    header {
+        height: 800px;
+    }
+
+    nav {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .logo h1 {
+        font-size: 25px;
+    }
+
+    .links {
+        width: 270px;
+        height: 100%;
+        display: flex;
+        position: fixed;
+        background: #4E4A4A;
+        flex-direction: column;
+        padding: 20px;
+        z-index: 1;
+        top: 60px;
+        right: -100%;
+        transition: all .4s;
+    }
+
+    .links.active {
+        right: 0;
+    }
+
+    .links a {
+        margin: 10px 0 10px 20px;
+    }
+
+    .actions {
+        display: none;
+    }
+
+    nav .fa-bars {
+        display: block;
+        font-size: 25px;
+        color: var(--text);
+    }
+
+    .banner {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .banner h1 {
+        text-align: center;
+    }
+
+    .banner-img {
+        width: 100%;
+    }
+
+    .banner-img img {
+        width: 100%;
+    }
+
+    .c1 {
+        left: -170px;
+    }
+
+    .c2,
+    .c3 {
+        display: none;
+    }
+
+    .category {
+        width: 100%;
+    }
+
+    .category h1 {
+        font-size: 60px;
+    }
+
+    .list {
+        width: 100%;
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 320px;
+        height: 320px;
+        margin: 10px auto;
+    }
+
+    .best-seller {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .best-seller h1 {
+        margin-top: 20px;
+    }
+
+    .best-seller .list {
+        padding-bottom: 30px;
+    }
+
+    .best-seller .card,
+    .top-farmers .farmers {
+        margin: 10px auto;
+    }
+
+    .top-farmers .list {
+        flex-direction: column-reverse;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    footer div {
+        width: 100%;
+        text-align: center;
+    }
+
+    .resLink {
+        display: block;
+    }
+}
