@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Farmers Ready</title>
-    <link rel="stylesheet" href="/static/css/user.css" />
+    <link rel="stylesheet" href="/static/css/index.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Jockey+One&family=Lalezar&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -15,10 +15,10 @@
     />
   </head>
   <body>
-    <header id="header">
+    <section class="navigation">
       <nav>
         <div class="logo">
-          <h1>Farmers Ready</h1>
+          <h1>Farmers <span>Ready</span></h1>
         </div>
 
         <div class="links">
@@ -27,21 +27,101 @@
           <a href="#">Contact</a>
           <a href="#">Food</a>
           <a href="#" class="resLink">Login</a>
+          <a class="resLink" onclick="showWishlist()">Wishlist</a>
         </div>
         <div class="actions">
-          <img src="/static/images/search.png" onclick="showSearchBar()" />
-          <img src="/static/images/heart.png" />
-          <img src="/static/images/user.png" />
+          <i class="fa-solid fa-magnifying-glass" onclick="showSearchBar()"></i>
+          <i class="fa-solid fa-heart" onclick="showWishlist()"></i>
+          <i class="fa-solid fa-circle-user"></i>
         </div>
-
         <i class="fas fa-bars"></i>
       </nav>
-
       <div class="searchBar">
         <input type="text" placeholder="Search" />
         <i class="fas fa-x" onclick="hideSearchBar()"></i>
       </div>
-
+      <div class="wishlist">
+        <div class="fas fa-close" onclick="hideWishlist()"></div>
+        <div class="wishCont">
+          <div class="itemContainer">
+            <div class="finalItem">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="item">
+              <img src="/static/images/crops.png" />
+              <div class="itemInfo">
+                <h3>Methi</h3>
+                <span>Price 50Rs</span>
+              </div>
+            </div>
+            <div class="removeItem">
+              <i class="fa-regular fa-trash-can"></i>
+            </div>
+          </div>
+          <div class="itemContainer">
+            <div class="finalItem">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="item">
+              <img src="/static/images/crops.png" />
+              <div class="itemInfo">
+                <h3>Methi</h3>
+                <span>Price 50Rs</span>
+              </div>
+            </div>
+            <div class="removeItem">
+              <i class="fa-regular fa-trash-can"></i>
+            </div>
+          </div>
+          <div class="itemContainer">
+            <div class="finalItem">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="item">
+              <img src="/static/images/crops.png" />
+              <div class="itemInfo">
+                <h3>Methi</h3>
+                <span>Price 50Rs</span>
+              </div>
+            </div>
+            <div class="removeItem">
+              <i class="fa-regular fa-trash-can"></i>
+            </div>
+          </div>
+          <div class="itemContainer">
+            <div class="finalItem">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="item">
+              <img src="/static/images/crops.png" />
+              <div class="itemInfo">
+                <h3>Methi</h3>
+                <span>Price 50Rs</span>
+              </div>
+            </div>
+            <div class="removeItem">
+              <i class="fa-regular fa-trash-can"></i>
+            </div>
+          </div>
+          <div class="itemContainer">
+            <div class="finalItem">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="item">
+              <img src="/static/images/crops.png" />
+              <div class="itemInfo">
+                <h3>Methi</h3>
+                <span>Price 50Rs</span>
+              </div>
+            </div>
+            <div class="removeItem">
+              <i class="fa-regular fa-trash-can"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <header id="header">
       <div class="banner">
         <h1>Empowering Farm<br />Efficiency</h1>
         <div class="banner-img">
@@ -52,9 +132,9 @@
         <div class="circle c3"></div>
       </div>
     </header>
-
     <section class="category">
       <h1>Search by <span>Categories</span></h1>
+      <i class="fa-solid fa-caret-left"></i>
       <div class="list">
         <a href="#" class="card">
           <img src="/static/images/crops.png" />
@@ -76,9 +156,43 @@
           <div class="bg"></div>
           <span>Fruits</span>
         </a>
+        <a href="#" class="card">
+          <img src="/static/images/fruit.png" />
+          <div class="bg"></div>
+          <span>Fruits</span>
+        </a>
+        <a href="#" class="card">
+          <img src="/static/images/fruit.png" />
+          <div class="bg"></div>
+          <span>Fruits</span>
+        </a>
+        <a href="#" class="card">
+          <img src="/static/images/fruit.png" />
+          <div class="bg"></div>
+          <span>Fruits</span>
+        </a>
       </div>
+      <i class="fa-solid fa-caret-right"></i>
     </section>
+    <script>
+      let leftArrow = document.querySelector(".fa-caret-left");
+      let rightArrow = document.querySelector(".fa-caret-right");
+      let list = document.querySelector(".category .list");
 
+      leftArrow.addEventListener("click", function () {
+        list.scrollBy({
+          left: -300, // Adjust this value as needed to control scrolling distance
+          behavior: "smooth", // Smooth scrolling
+        });
+      });
+
+      rightArrow.addEventListener("click", function () {
+        list.scrollBy({
+          left: 300, // Adjust this value as needed to control scrolling distance
+          behavior: "smooth", // Smooth scrolling
+        });
+      });
+    </script>
     <section class="best-seller">
       <h1>Best Seller <br /><span>Foods</span></h1>
       <div class="list">
@@ -97,18 +211,18 @@
 
     <section class="top-farmers">
       <div class="list">
-        <div class="farmers">
+        <a href="#" class="farmers">
           <img src="/static/images/farmer 1.png" />
           <span>Pranit Daphale 1</span>
-        </div>
-        <div class="farmers">
+        </a>
+        <a href="#" class="farmers">
           <img src="/static/images/farmer 1.png" />
           <span>Pranit Daphale 2</span>
-        </div>
-        <div class="farmers">
+        </a>
+        <a href="#" class="farmers">
           <img src="/static/images/farmer 1.png" />
           <span>Pranit Daphale 3</span>
-        </div>
+        </a>
         <div class="farmers">
           <h1>
             Top <br />
@@ -119,7 +233,7 @@
     </section>
 
     <div class="messaging">
-      <img src="/static/images/chat.png" />
+      <i class="fa-regular fa-comments"></i>
     </div>
 
     <footer>
@@ -140,7 +254,7 @@
         </ul>
       </div>
       <div class="d3">
-        <h1>Pages</h1>
+        <h1>Food</h1>
         <ul>
           <li>Food</li>
           <li>Farmers</li>
@@ -149,28 +263,30 @@
         </ul>
       </div>
       <div class="d4">
-        <h1>Pages</h1>
+        <h1>Contact us</h1>
         <ul>
-          <li>Food</li>
-          <li>Farmers</li>
-          <li>Contact Us</li>
-          <li>About Us</li>
+          <li>
+            modern collage ganesh khind pune phone - 0000000000 email -
+            farmerready@gmail.com
+          </li>
         </ul>
       </div>
     </footer>
 
     <div class="copyright">
-      <span>Farmers Ready @Copyright All Right Reserved</span>
+      <span>Farmers Ready © Copyright All Right Reserved</span>
     </div>
   </body>
 
   <script>
     let menuBar = document.querySelector(".fa-bars");
     let links = document.querySelector(".links");
-    menuBar.addEventListener("click", () => {
+
+    let hideSideNavBar = () => {
       menuBar.classList.toggle("fa-close");
       links.classList.toggle("active");
-    });
+    };
+    menuBar.addEventListener("click", hideSideNavBar);
 
     window.addEventListener("scroll", () => {
       menuBar.classList.remove("fa-close");
@@ -194,6 +310,16 @@
     let hideSearchBar = () => {
       document.querySelector(".searchBar").classList.remove("active");
       document.querySelector(".searchBar input").value = "";
+      document.querySelector(".wishlist").classList.remove("active");
+    };
+
+    let showWishlist = () => {
+      document.querySelector(".wishlist").classList.toggle("active");
+      hideSideNavBar();
+    };
+
+    let hideWishlist = () => {
+      document.querySelector(".wishlist").classList.remove("active");
     };
   </script>
 </html>

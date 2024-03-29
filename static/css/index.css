@@ -2,8 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Jockey One", sans-serif;
-    /* "Lalezar" */
+    font-family: "poppins", sans-serif;
 }
 
 :root {
@@ -13,6 +12,7 @@
     --green: #3CCB25;
     --width: 1366px;
 }
+
 
 body::-webkit-scrollbar {
     background: #ccc;
@@ -28,6 +28,11 @@ header {
     height: 660px;
     background: var(--background);
     overflow: hidden;
+}
+
+.navigation {
+    width: var(--width);
+    background: var(--background);
     position: relative;
 }
 
@@ -41,8 +46,12 @@ nav {
 }
 
 .logo h1 {
-    font-size: 42px;
+    font-size: 40px;
     color: var(--text);
+}
+
+.logo h1 span {
+    color: var(--green);
 }
 
 .links {
@@ -52,6 +61,8 @@ nav {
 .links a {
     text-decoration: none;
     margin: 0 15px;
+    font-size: 24px;
+    font-weight: 600;
     color: var(--text);
 }
 
@@ -60,11 +71,13 @@ nav {
     align-items: center;
 }
 
-.actions img {
+.actions i {
     width: 32px;
     height: 32px;
     margin: 0 8px;
     cursor: pointer;
+    font-size: 25px;
+    color: var(--text);
 }
 
 .banner {
@@ -77,8 +90,9 @@ nav {
 }
 
 .banner h1 {
+    margin-top: -30px;
     font-size: 62px;
-    font-family: "Lalezar";
+    /* font-family: "Lalezar"; */
     color: var(--text);
 }
 
@@ -108,7 +122,7 @@ nav {
 
 .searchBar {
     position: absolute;
-    right: -100%;
+    right: 30px;
     width: 300px;
     height: 50px;
     display: flex;
@@ -116,10 +130,15 @@ nav {
     justify-content: space-between;
     transition: all .4s;
     z-index: 1;
+    top: 150px;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .searchBar.active {
-    right: 30px;
+    top: 100px;
+    opacity: 1;
+    visibility: visible;
 }
 
 .searchBar input {
@@ -129,7 +148,7 @@ nav {
     border-bottom-left-radius: 10px;
     border: none;
     padding-left: 20px;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     font-size: 18px;
     outline: none;
 }
@@ -151,9 +170,14 @@ footer,
     margin: auto;
 }
 
+.category {
+    position: relative;
+    overflow: hidden;
+}
+
 .category h1 {
-    font-size: 64px;
-    font-family: "Lalezar";
+    font-size: 50px;
+    /* font-family: "Lalezar"; */
     color: var(--black);
     margin-left: 70px;
 }
@@ -162,8 +186,65 @@ footer,
     color: var(--green);
 }
 
+.category:hover>.fa-caret-left {
+    opacity: 1;
+    left: 20px;
+    visibility: visible
+}
+
+.category:hover>.fa-caret-right {
+    opacity: 1;
+    right: 0;
+    visibility: visible
+}
+
+.fa-caret-left,
+.fa-caret-right {
+    position: absolute;
+    font-size: 4rem;
+    top: 56%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s;
+}
+
+.fa-caret-left {
+    left: -100px;
+}
+
+.fa-caret-right {
+    right: -100px;
+}
+
+.list {
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.category .list {
+    overflow: hidden;
+}
+
+.category .list .card {
+    margin: 0 20px;
+}
+
+.card span {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
 .card {
-    width: 300px;
+    min-width: 300px;
     height: 300px;
     border-radius: 10px;
     text-decoration: none;
@@ -194,21 +275,7 @@ footer,
     object-fit: contain;
 }
 
-.list {
-    padding: 0 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 30px;
-}
 
-.card span {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    font-size: 23px;
-    font-weight: bold;
-}
 
 .best-seller {
     height: 400px;
@@ -221,12 +288,12 @@ footer,
 .best-seller h1 {
     margin-left: 50px;
     font-size: 64px;
-    font-family: "Lalezar";
+    /* font-family: "Lalezar"; */
     color: var(--text);
 }
 
 .best-seller h1 span {
-    font-family: "Lalezar";
+    /* font-family: "Lalezar"; */
     color: var(--green);
 }
 
@@ -243,8 +310,9 @@ footer,
 }
 
 .farmers {
+    text-decoration: none;
     width: 300px;
-    height: 300px;
+    height: 320px;
     background: #F5F5F5;
     position: relative;
     border-radius: 20px;
@@ -255,14 +323,19 @@ footer,
     height: 250px;
     object-fit: contain;
     position: absolute;
-    top: 0%;
+    top: 25px;
     left: 50%;
+    border-radius: 20px;
     transform: translate(-50%, 0%);
 }
 
 .farmers span {
+    color: var(--black);
     position: absolute;
     bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
     left: 50%;
     font-size: 20px;
     transform: translate(-50%, 0%);
@@ -296,6 +369,7 @@ footer {
 
 footer h1 {
     margin-top: 50px;
+    /* border: 1px solid red; */
     color: var(--text);
 }
 
@@ -317,7 +391,7 @@ footer h1 {
 
 .d1 h1 {
     position: relative;
-    margin-left: 50px;
+    /* margin-left: 50px; */
     color: var(--black);
     z-index: 1;
 }
@@ -384,13 +458,178 @@ nav .fa-bars {
     opacity: 1;
 }
 
-.messaging img {
+.messaging i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text);
+    font-size: 3rem;
+}
+
+.wishlist {
+    position: absolute;
+    width: 400px;
+    height: 70vh;
+    padding: 20px;
+    z-index: 2;
+    top: 150px;
+    right: 30px;
+    background: var(--text);
+    border-radius: 20px;
+    /* overflow-x: scroll; */
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s;
+}
+
+.wishlist.active {
+    top: 100px;
+    visibility: visible;
+    opacity: 1;
+}
+
+.wishlist .fa-close {
+    position: absolute;
+    font-size: 30px;
+    background: #0D1033;
+    padding: 10px 13px;
+    border-radius: 50%;
+    z-index: 1;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text);
+
+}
+
+.wishCont {
     width: 100%;
     height: 100%;
+    overflow-x: scroll;
 }
+
+.wishCont::-webkit-scrollbar {
+    display: none;
+}
+
+.itemContainer {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.itemContainer:hover .finalItem {
+    left: 0;
+    background: var(--green);
+}
+
+.itemContainer:hover i {
+    color: var(--text);
+}
+
+.itemContainer:hover .removeItem {
+    right: 0;
+    background: red;
+}
+
+
+.finalItem,
+.removeItem {
+    height: 100%;
+    position: absolute;
+    transition: all .5s;
+}
+
+.finalItem {
+    left: -150px;
+}
+
+.removeItem {
+    right: -150px;
+}
+
+.finalItem {
+    width: 90px;
+    height: 100%;
+    border: 3px solid var(--green);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.finalItem i {
+    font-size: 30px;
+    color: var(--green);
+}
+
+.item {
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--background);
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.item img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.itemInfo h3 {
+    width: 150px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    user-select: none;
+}
+
+.itemInfo span {
+    user-select: none;
+    font-weight: 500;
+}
+
+.removeItem {
+    width: 90px;
+    height: 100%;
+    border: 3px solid red;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.removeItem i {
+    font-size: 30px;
+    color: red;
+}
+
+.wishlist .fa-close {
+    display: none;
+}
+
+
+
+
 
 @media (max-width:400px) {
 
+    .navigation,
     header,
     section,
     footer,
@@ -451,6 +690,7 @@ nav .fa-bars {
     }
 
     .banner h1 {
+        font-size: 50px;
         text-align: center;
     }
 
@@ -464,6 +704,7 @@ nav .fa-bars {
 
     .c1 {
         left: -170px;
+        bottom: -100%;
     }
 
     .c2,
@@ -476,19 +717,35 @@ nav .fa-bars {
     }
 
     .category h1 {
-        font-size: 60px;
+        font-size: 50px;
+        margin-left: 0;
+        text-align: center;
     }
 
     .list {
         width: 100%;
         padding: 10px;
-        flex-wrap: wrap;
+    }
+
+    .category .fa-caret-left,
+    .category .fa-caret-right {
+        display: none;
+    }
+
+    .category .list {
+        overflow-x: scroll;
+        white-space: nowrap;
+        display: flex;
+        scroll-snap-type: x mandatory;
+    }
+
+    .category .list .card {
+        scroll-snap-align: center;
     }
 
     .card {
         width: 320px;
         height: 320px;
-        margin: 10px auto;
     }
 
     .best-seller {
@@ -513,6 +770,10 @@ nav .fa-bars {
         flex-direction: column-reverse;
     }
 
+    .best-seller .list {
+        flex-wrap: wrap;
+    }
+
     footer {
         flex-wrap: wrap;
         height: auto;
@@ -524,6 +785,20 @@ nav .fa-bars {
     }
 
     .resLink {
+        display: block;
+    }
+
+    .wishlist {
+        width: 100%;
+        height: 70vh;
+        right: 0;
+    }
+
+    .wishlist.active {
+        top: 60px;
+    }
+
+    .wishlist .fa-close {
         display: block;
     }
 }
