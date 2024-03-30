@@ -80,6 +80,15 @@ nav {
     color: var(--text);
 }
 
+.actions img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0 8px;
+}
+
 .banner {
     margin: 20px auto 0 auto;
     width: var(--width);
@@ -122,7 +131,7 @@ nav {
 
 .searchBar {
     position: absolute;
-    right: 30px;
+    right: 80px;
     width: 300px;
     height: 50px;
     display: flex;
@@ -160,6 +169,82 @@ nav {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     cursor: pointer;
+}
+
+.searchResults {
+    position: absolute;
+    width: 400px;
+    min-height: auto;
+    max-height: 50vh;
+    background: var(--text);
+    top: 200px;
+    z-index: 1;
+    right: 30px;
+    border-radius: 10px;
+    overflow-y: scroll;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s;
+}
+
+.searchResults.active {
+    top: 170px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.searchResults::-webkit-scrollbar {
+    display: none;
+}
+
+.searchResults .list {
+    flex-direction: column;
+    padding: 0;
+}
+
+.searchResults .prod {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-bottom: 2px solid var(--black);
+    border-radius: 10px;
+    margin: 5px 0;
+    position: relative;
+}
+
+.prod i {
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    font-size: 35px;
+    color: var(--black);
+    z-index: 2;
+}
+
+.prod:hover {
+    background: #ccc;
+}
+
+.searchResults .prod img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.prodInfo {
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+}
+
+.prodInfo :is(h3, span, b) {
+    width: 200px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 header,
@@ -623,9 +708,81 @@ nav .fa-bars {
     display: none;
 }
 
+.profileCont {
+    position: absolute;
+    top: 150px;
+    right: 30px;
+    background: var(--text);
+    border-radius: 20px;
+    width: 350px;
+    z-index: 1;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s;
+}
 
+.profileCont.active {
+    top: 100px;
+    opacity: 1;
+    visibility: visible;
+}
 
+.profileCont .fa-pen-to-square {
+    position: absolute;
+    font-size: 25px;
+    z-index: 1;
+    top: 120px;
+    right: 90px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--black);
+}
 
+.profilePic {
+    width: 100%;
+    height: 100px;
+    background: #3bb628;
+    position: relative;
+}
+
+.profilePic img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid var(--text);
+}
+
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.profileInfo a {
+    margin: 15px 0;
+    text-decoration: none;
+    color: var(--black);
+    width: 200px;
+    background: var(--green);
+    height: 50px;
+    align-self: center;
+    line-height: 50px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.profileInfo a:hover {
+    background: #3bb628;
+}
 
 @media (max-width:400px) {
 

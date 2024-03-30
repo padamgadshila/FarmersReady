@@ -32,7 +32,12 @@
         <div class="actions">
           <i class="fa-solid fa-magnifying-glass" onclick="showSearchBar()"></i>
           <i class="fa-solid fa-heart" onclick="showWishlist()"></i>
-          <i class="fa-solid fa-circle-user"></i>
+          <!-- <i class="fa-solid fa-circle-user" onclick="showProfile()"></i> -->
+          <img
+            src="/static/images/icon.jpg"
+            width="30px"
+            onclick="showProfile()"
+          />
         </div>
         <i class="fas fa-bars"></i>
       </nav>
@@ -40,10 +45,43 @@
         <input type="text" placeholder="Search" />
         <i class="fas fa-x" onclick="hideSearchBar()"></i>
       </div>
+
+      <div class="searchResults">
+        <div class="list">
+          <div class="prod" data-productName="Methi">
+            <i class="fas fa-heart"></i>
+            <img src="/static/images/crops.png" />
+            <div class="prodInfo">
+              <h3>Methi</h3>
+              <span>Price 50Rs</span>
+              <b>Sold by Parnit Daphale</b>
+            </div>
+          </div>
+          <div class="prod" data-productName="Sugar">
+            <i class="fas fa-heart"></i>
+            <img src="/static/images/crops.png" />
+            <div class="prodInfo">
+              <h3>Sugar</h3>
+              <span>Price 50Rs</span>
+              <b>Sold by Parnit Daphale</b>
+            </div>
+          </div>
+          <div class="prod" data-productName="orange">
+            <i class="fas fa-heart"></i>
+            <img src="/static/images/crops.png" />
+            <div class="prodInfo">
+              <h3>orange</h3>
+              <span>Price 50Rs</span>
+              <b>Sold by Parnit Daphale Gadshila</b>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="wishlist">
         <div class="fas fa-close" onclick="hideWishlist()"></div>
         <div class="wishCont">
-          <div class="itemContainer">
+          <div class="itemContainer" data-productName="Methi">
             <div class="finalItem">
               <i class="fa-solid fa-envelope"></i>
             </div>
@@ -58,14 +96,14 @@
               <i class="fa-regular fa-trash-can"></i>
             </div>
           </div>
-          <div class="itemContainer">
+          <div class="itemContainer" data-productName="Sugar">
             <div class="finalItem">
               <i class="fa-solid fa-envelope"></i>
             </div>
             <div class="item">
               <img src="/static/images/crops.png" />
               <div class="itemInfo">
-                <h3>Methi</h3>
+                <h3>Sugar</h3>
                 <span>Price 50Rs</span>
               </div>
             </div>
@@ -73,14 +111,15 @@
               <i class="fa-regular fa-trash-can"></i>
             </div>
           </div>
-          <div class="itemContainer">
+
+          <div class="itemContainer" data-productName="Rice">
             <div class="finalItem">
               <i class="fa-solid fa-envelope"></i>
             </div>
             <div class="item">
               <img src="/static/images/crops.png" />
               <div class="itemInfo">
-                <h3>Methi</h3>
+                <h3>Rice</h3>
                 <span>Price 50Rs</span>
               </div>
             </div>
@@ -88,36 +127,18 @@
               <i class="fa-regular fa-trash-can"></i>
             </div>
           </div>
-          <div class="itemContainer">
-            <div class="finalItem">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div class="item">
-              <img src="/static/images/crops.png" />
-              <div class="itemInfo">
-                <h3>Methi</h3>
-                <span>Price 50Rs</span>
-              </div>
-            </div>
-            <div class="removeItem">
-              <i class="fa-regular fa-trash-can"></i>
-            </div>
-          </div>
-          <div class="itemContainer">
-            <div class="finalItem">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div class="item">
-              <img src="/static/images/crops.png" />
-              <div class="itemInfo">
-                <h3>Methi</h3>
-                <span>Price 50Rs</span>
-              </div>
-            </div>
-            <div class="removeItem">
-              <i class="fa-regular fa-trash-can"></i>
-            </div>
-          </div>
+        </div>
+      </div>
+
+      <div class="profileCont">
+        <a href="#" class="fa-solid fa-pen-to-square" target="_blank"></a>
+        <div class="profilePic">
+          <img src="/static/images/icon.jpg" alt="" />
+        </div>
+        <div class="profileInfo">
+          <h2>Pranit Daphale</h2>
+          <span>pranit@gmail.com</span>
+          <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
         </div>
       </div>
     </section>
@@ -174,25 +195,7 @@
       </div>
       <i class="fa-solid fa-caret-right"></i>
     </section>
-    <script>
-      let leftArrow = document.querySelector(".fa-caret-left");
-      let rightArrow = document.querySelector(".fa-caret-right");
-      let list = document.querySelector(".category .list");
 
-      leftArrow.addEventListener("click", function () {
-        list.scrollBy({
-          left: -300, // Adjust this value as needed to control scrolling distance
-          behavior: "smooth", // Smooth scrolling
-        });
-      });
-
-      rightArrow.addEventListener("click", function () {
-        list.scrollBy({
-          left: 300, // Adjust this value as needed to control scrolling distance
-          behavior: "smooth", // Smooth scrolling
-        });
-      });
-    </script>
     <section class="best-seller">
       <h1>Best Seller <br /><span>Foods</span></h1>
       <div class="list">
@@ -276,50 +279,6 @@
     <div class="copyright">
       <span>Farmers Ready © Copyright All Right Reserved</span>
     </div>
+    <script src="/static/js/index.js"></script>
   </body>
-
-  <script>
-    let menuBar = document.querySelector(".fa-bars");
-    let links = document.querySelector(".links");
-
-    let hideSideNavBar = () => {
-      menuBar.classList.toggle("fa-close");
-      links.classList.toggle("active");
-    };
-    menuBar.addEventListener("click", hideSideNavBar);
-
-    window.addEventListener("scroll", () => {
-      menuBar.classList.remove("fa-close");
-      links.classList.remove("active");
-      hideSearchBar();
-
-      let scrollPosition = window.scrollY;
-      let headerHeight = document.querySelector("header").offsetHeight - 200;
-      let messaging = document.querySelector(".messaging");
-      if (scrollPosition > headerHeight) {
-        messaging.classList.add("active");
-      } else {
-        messaging.classList.remove("active");
-      }
-    });
-
-    let showSearchBar = () => {
-      document.querySelector(".searchBar").classList.toggle("active");
-    };
-
-    let hideSearchBar = () => {
-      document.querySelector(".searchBar").classList.remove("active");
-      document.querySelector(".searchBar input").value = "";
-      document.querySelector(".wishlist").classList.remove("active");
-    };
-
-    let showWishlist = () => {
-      document.querySelector(".wishlist").classList.toggle("active");
-      hideSideNavBar();
-    };
-
-    let hideWishlist = () => {
-      document.querySelector(".wishlist").classList.remove("active");
-    };
-  </script>
 </html>
