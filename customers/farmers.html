@@ -409,26 +409,5 @@
     <script src="../static/js/navigationbar.js"></script>
     <script src="../static/js/footer.js"></script>
 
-    <script>
-      socket.emit("searchPage");
-
-      socket.on("searchPageData", (data) => {
-        console.log(data);
-        let farmersProfileList = document.querySelector(
-          ".farmersProfileList .list"
-        );
-        farmersProfileList.innerHTML = "";
-        data.forEach((i) => {
-          let div = document.createElement("div");
-          div.className = "card";
-          div.innerHTML = `
-                    <a href="/profile?name=${i.name}&id=${i.uid}">
-                    <img class="category_pic" src="${i.image}" alt="${i.name}" />
-                    </a>
-                    <span>${i.name}</span>`;
-          farmersProfileList.appendChild(div);
-        });
-      });
-    </script>
   </body>
 </html>
