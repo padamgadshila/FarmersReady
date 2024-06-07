@@ -1,0 +1,103 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vishal Rao</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/forms.css" />
+  </head>
+  <body id="additem-page">
+    <section>
+      <div class="container">
+        <form
+          id="editProfile"
+          action="/editprofile"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="gird" id="editProfileGrid">
+            <div class="inputs">
+              <label id="imageLabel" for="image-input">
+                <span class="hide" style="display: none"
+                  >Select item image</span
+                >
+                <img
+                  id="image_preview"
+                  src="/uploads/farmers/vishalrao@gmail.com/f3.jpg"
+                  alt="Image Preview"
+                  style="display: block; border: 2px solid var(--green)"
+                />
+              </label>
+              <input
+                accept="image/*"
+                type="file"
+                id="image-input"
+                name="image"
+              />
+            </div>
+
+            <div class="inputs">
+              <input type="text" required="" name="name" value="Vishal Rao" />
+              <label>Name</label>
+            </div>
+            <div class="inputs">
+              <input
+                type="number"
+                required=""
+                value="8745965412"
+                name="mobile"
+              />
+              <label>Mobile</label>
+            </div>
+
+            <div class="inputs">
+              <input
+                type="email"
+                required=""
+                value="vishalrao@gmail.com"
+                name="email"
+              />
+              <label>Email <span id="per"></span></label>
+            </div>
+          </div>
+          <input type="hidden" name="role" value="Farmers" />
+          <div class="btns_">
+            <button class="buttons add_itm" type="submit">
+              Update Profile
+            </button>
+            <!-- <button class="buttons cancle_btn" type="reset">Reset</button> -->
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      let imageInput = document.getElementById("image-input"),
+        imagePreview = document.getElementById("image_preview"),
+        hideSpan = document.querySelector(".hide");
+
+      imageInput.addEventListener("change", function () {
+        const file = imageInput.files[0];
+        if (file) {
+          const reader = new FileReader();
+
+          reader.onload = function (e) {
+            imagePreview.src = e.target.result;
+            imagePreview.style.display = "block";
+            imagePreview.style.border = "2px solid var(--green)";
+            hideSpan.style.display = "none";
+          };
+
+          reader.readAsDataURL(file);
+        } else {
+          imagePreview.src = "";
+          imagePreview.style.display = "none";
+          hideSpan.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+:root {
+    --background: #1D1D1D;
+    --text: #fff;
+    --black: #000;
+    --green: #3CCB25;
+    --blackGrey: #4e4a4a;
+    --red: red;
+    --width: 1300px;
+    /* --width: 1366px; */
+    /* --width: 1536px; */
+}
+
+.farmersProfile {
+    width: 100%;
+    background: var(--background);
+}
+
+.farmersInfo {
+    width: var(--width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.farmersInfo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.wrapper {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper h1 {
+    color: var(--green);
+}
+
+.wrapper span {
+    color: var(--text);
+}
+
+.ratings i {
+    color: gold;
+}
+
+.inventoryContainer {
+    width: 100%;
+}
+
+
+.inventoryContainer h1 {
+    text-align: center;
+    margin: 20px;
+    font-size: 30px;
+}
+
+.inventoryContainer h1 span {
+    color: var(--green);
+}
+
+.productsList {
+    margin: 0 auto;
+    width: var(--width);
+    padding: 20px 35px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+
+@media (max-width:400px) {
+    .farmersInfo {
+        width: 100%;
+    }
+
+    .productsList {
+        width: 100%;
+    }
+
+}

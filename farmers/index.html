@@ -1,0 +1,254 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmers Ready</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/static/css/farmers.css" />
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  </head>
+
+  <body>
+    <section class="navigationContainer">
+      <nav>
+        <div class="logo">
+          <a href="./index.html">Farmers <span>Ready</span></a>
+        </div>
+
+        <img
+          src="/uploads/farmers/vishalrao@gmail.com/f3.jpg"
+          width="30px"
+          data-profile=""
+        />
+      </nav>
+      <div class="profileCont">
+        <i class="fas fa-close" onclick="hideProfile()"></i>
+        <a
+          href="./editProfile.html"
+          class="fa-solid fa-pen-to-square"
+          target="_blank"
+        ></a>
+        <div class="profilePic">
+          <img src="/uploads/farmers/vishalrao@gmail.com/f3.jpg" alt="" />
+        </div>
+        <div class="profileInfo">
+          <h2>Vishal Rao</h2>
+          <span>vishalrao@gmail.com</span>
+          <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mainContainer">
+      <div class="main">
+        <section class="sidenavbar">
+          <!-- <i class="fas fa-arrow-right"></i> -->
+          <ul>
+            <li data-page="p1" class="active">
+              <i class="fa-solid fa-warehouse"></i><span>Inventory</span>
+            </li>
+            <li data-page="p2" class="">
+              <i class="fa-solid fa-inbox"></i><span>Inbox</span>
+            </li>
+            <li data-page="p3" class="">
+              <i class="fa-solid fa-gear"></i><span>Tools</span>
+            </li>
+          </ul>
+        </section>
+        <section class="mainView">
+          <div class="page active" id="p1">
+            <a class="addItem" href="./addItem.html" target="_blank"
+              >Add item <i class="fas fa-add"></i>
+            </a>
+
+            <h1>Inventory</h1>
+            <div class="list">
+              <div class="card">
+                <i class="fa-solid fa-trash-can" data-itemid="17"></i>
+                <img
+                  src="/uploads/farmers/vishalrao@gmail.com/wheat.jpg"
+                  alt="Product Image"
+                />
+                <div class="proInfo">
+                  <h3>Wheat</h3>
+                  <span>Price : <b> 30 Rs/kg</b></span>
+                  <br />
+                  <span>Total : <b> 4500 Rs</b></span>
+                  <br />
+                  <span>Stock : <b> 150</b></span>
+                </div>
+                <a href="./updateItem.html" target="_blank" class="editHover"
+                  ><i class="fas fa-pencil"></i
+                ></a>
+              </div>
+              <div class="card">
+                <i class="fa-solid fa-trash-can" data-itemid="20"></i>
+                <img
+                  src="/uploads/farmers/vishalrao@gmail.com/onion.jpg"
+                  alt="Product Image"
+                />
+                <div class="proInfo">
+                  <h3>Onion</h3>
+                  <span>Price : <b> 50 Rs/kg</b></span>
+                  <br />
+                  <span>Total : <b> 11500 Rs</b></span>
+                  <br />
+                  <span>Stock : <b> 230</b></span>
+                </div>
+                <a href="./updateItem.html" target="_blank" class="editHover"
+                  ><i class="fas fa-pencil"></i
+                ></a>
+              </div>
+              <div class="card">
+                <i class="fa-solid fa-trash-can" data-itemid="21"></i>
+                <img
+                  src="/uploads/farmers/vishalrao@gmail.com/carrots.jpg"
+                  alt="Product Image"
+                />
+                <div class="proInfo">
+                  <h3>Carrots</h3>
+                  <span>Price : <b> 35 Rs/kg</b></span>
+                  <br />
+                  <span>Total : <b> 10500 Rs</b></span>
+                  <br />
+                  <span>Stock : <b> 300</b></span>
+                </div>
+                <a href="./updateItem.html" target="_blank" class="editHover"
+                  ><i class="fas fa-pencil"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="page" id="p2">
+            <div class="users-list">
+              <div class="serachBox">
+                <input type="text" placeholder="Search" />
+                <i class="fas fa-magnifying-glass"></i>
+              </div>
+              <div class="scrollList">
+                <div class="userCard" data-cid="13">
+                  <div class="userImg">
+                    <img
+                      src="/uploads/customers/harshpawar@gmail.com/u1.jpg"
+                      alt="Harsh Pawar"
+                    />
+                  </div>
+                  <div class="userInfo">
+                    <h2>Harsh Pawar</h2>
+                    <span>12kg </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chatBox">
+              <div class="blank active"></div>
+              <div class="messTop">
+                <img src="/uploads/customers/harshpawar@gmail.com/u1.jpg" />
+                <h1>Harsh Pawar</h1>
+              </div>
+              <div class="messBody">
+                <div class="incoming chat">
+                  <p>
+                    Hey there! I am interested in your product
+                    <b>Wheat 30 Rs/kg</b>
+                  </p>
+                </div>
+                <div class="outgoing chat"><p>OK</p></div>
+                <div class="outgoing chat"><p>How much kg u want?</p></div>
+                <div class="incoming chat"><p>12kg</p></div>
+              </div>
+              <div class="messInput">
+                <input
+                  type="text"
+                  name="message"
+                  placeholder="Enter your message"
+                  data-cid="13"
+                />
+                <i class="fas fa-paper-plane"></i>
+              </div>
+            </div>
+          </div>
+          <div class="page" id="p3">
+            <div class="addCat">
+              <h1>Category</h1>
+              <a class="addCate" href="./addCat.html" target="_blank"
+                >Add Category <i class="fas fa-add"></i
+              ></a>
+              <div class="list">
+                <div class="card">
+                  <img src="/uploads/categories/garins.jpg" alt="Grains" />
+                  <h3>Grains</h3>
+                  <br />
+                  <div class="editHover">
+                    <a href="./updateCat.html" target="_blank"
+                      >Edit category<i class="fas fa-pencil"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="/uploads/categories/fruits.jpg" alt="Fruits" />
+                  <h3>Fruits</h3>
+                  <br />
+                  <div class="editHover">
+                    <a href="./updateCat.html" target="_blank"
+                      >Edit category<i class="fas fa-pencil"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="/uploads/categories/vegeis.jpg" alt="Vegetables" />
+                  <h3>Vegetables</h3>
+                  <br />
+                  <div class="editHover">
+                    <a href="./updateCat.html" target="_blank"
+                      >Edit category<i class="fas fa-pencil"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="/uploads/categories/protiens.jpg" alt="Meat/Fish" />
+                  <h3>Meat/Fish</h3>
+                  <br />
+                  <div class="editHover">
+                    <a href="./updateCat.html" target="_blank"
+                      >Edit category<i class="fas fa-pencil"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="/uploads/categories/oils.jpg" alt="Oils and fats" />
+                  <h3>Oils and fats</h3>
+                  <br />
+                  <div class="editHover">
+                    <a href="./updateCat.html" target="_blank"
+                      >Edit category<i class="fas fa-pencil"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img
+                    src="/uploads/categories/nuts.jpg"
+                    alt="Nuts and seeds"
+                  />
+                  <h3>Nuts and seeds</h3>
+                  <br />
+                  <div class="editHover">
+                    <a href="./updateCat.html" target="_blank"
+                      >Edit category<i class="fas fa-pencil"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <script src="/static/js/farmers.js"></script>
+  </body>
+</html>

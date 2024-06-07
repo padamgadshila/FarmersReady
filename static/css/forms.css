@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+:root {
+    --background: #1d1d1d;
+    --text: #fff;
+    --black: #000;
+    --green: #3ccb25;
+    --blackGrey: #4e4a4a;
+    --red: red;
+    --widthB: 1536px;
+    --width: 1366px;
+    /* --width: 1366px; */
+    /* --width: 1536px; */
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+}
+
+.container {
+    width: var(--width);
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    width: auto;
+    height: auto;
+    padding: 20px;
+    background: var(--text);
+    border-radius: 10px;
+    position: relative;
+}
+
+.gird {
+    display: grid;
+    gap: 20px;
+    padding: 10px 5px;
+}
+
+#addCategoryGrid {
+    grid-template-columns: 250px;
+    grid-template-rows: repeat(4, 70px);
+}
+
+#addItemGrid {
+    grid-template-columns: 150px 150px 150px 150px 250px;
+    grid-template-rows: repeat(3, 70px);
+}
+
+#editProfileGrid {
+    grid-template-columns: 250px 350px;
+    grid-template-rows: repeat(3, 70px);
+}
+
+.inputs {
+    position: relative;
+    width: 100%;
+}
+
+.inputs:nth-child(1) {
+    grid-area: 1 / 1 / 4 / 2;
+}
+
+.inputs:nth-child(2) {
+    grid-area: 4 / 1 / 4 / 2;
+}
+
+#addFoodForm .inputs:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 5;
+}
+
+#addFoodForm .inputs:nth-child(2) {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+#addFoodForm .inputs:nth-child(3) {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+#addFoodForm .inputs:nth-child(4) {
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+#addFoodForm .inputs:nth-child(5) {
+    grid-area: 2 / 4 / 3 / 5;
+}
+
+#addFoodForm .inputs:nth-child(6) {
+    grid-area: 3 / 1 / 4 / 5;
+}
+
+#addFoodForm .inputs:nth-child(7) {
+    grid-area: 1 / 5 / 4 / 5;
+}
+
+#editProfileGrid .inputs:nth-child(1) {
+    grid-area: 1 / 1 / 4 / 2;
+}
+
+#editProfileGrid .inputs:nth-child(2) {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+#editProfileGrid .inputs:nth-child(3) {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+#editProfileGrid .inputs:nth-child(4) {
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+.inputs input,
+.inputs select {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    padding: 0 10px 0 20px;
+    font-size: 17px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: all .4s;
+}
+
+.inputs input:is(:focus, :valid),
+.inputs select:is(:focus, :valid) {
+    border: 2px solid var(--green);
+}
+
+.inputs label {
+    position: absolute;
+    top: 22px;
+    left: 15px;
+    user-select: none;
+    pointer-events: none;
+    font-size: 18px;
+    padding: 0 5px;
+    background: var(--text);
+    transition: all .4s;
+}
+
+.inputs input:is(:focus, :valid)+label,
+.inputs select:is(:focus, :valid)+label {
+    color: var(--green);
+    transform: translateY(-35px);
+}
+
+input[name='image'] {
+    display: none;
+}
+
+.cropContainer {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#image_preview {
+    width: 100%;
+    height: 100%;
+    display: none;
+    /* object-fit: contain; */
+    border-radius: 10px;
+}
+
+#imageLabel {
+    all: unset;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    background: var(--text);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.hide {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--text);
+    border: 1px solid #ccc;
+}
+
+.btns_ {
+    margin-top: 10px;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons {
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#addFoodForm .buttons,
+#editProfile .buttons {
+    padding: 15px 30px;
+}
+
+#newCatForm .buttons {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.cancle:hover {
+    background: #c5c2c2;
+}
+
+.add_itm {
+    background: var(--green);
+    color: #fff;
+}
+
+.error {
+    display: inline-block;
+    color: red;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 3px 0;
+}
+
+@media (max-width:400px) {
+    .container {
+        width: 100%;
+    }
+}

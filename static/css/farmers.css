@@ -1,0 +1,939 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+:root {
+    --background: #1d1d1d;
+    --text: #fff;
+    --black: #000;
+    --green: #3ccb25;
+    --blackGrey: #4e4a4a;
+    --red: red;
+    --widthB: 1536px;
+    --width: 1366px;
+    /* --width: 1366px; */
+    /* --width: 1536px; */
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+/* navigation start */
+.navigationContainer {
+    width: 100%;
+    background: var(--background);
+}
+
+nav {
+    width: var(--width);
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+.logo {
+    font-size: 45px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+#loginBtn {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 25px;
+    font-weight: 600;
+}
+
+/* navigation end */
+
+/* sideNavigation start */
+.sidenavbar {
+    width: 100px;
+    height: 100%;
+    padding: 10px;
+    background: #4e4a4a;
+    position: relative;
+}
+
+
+.sidenavbar .fa-arrow-right {
+    position: absolute;
+    color: var(--green);
+    padding: 15px;
+    font-size: 25px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    left: 0;
+}
+
+.sidenavbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidenavbar li {
+    width: 90px;
+    height: 90px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--text);
+    user-select: none;
+    color: #777171;
+}
+
+.sidenavbar li.active {
+    color: var(--text);
+}
+
+.sidenavbar li i {
+    font-size: 25px;
+    margin: 5px 0;
+}
+
+.sidenavbar li span {
+    font-weight: 600;
+}
+
+/* sideNavigation end */
+
+/* mainContainer start */
+.mainContainer {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 80px);
+}
+
+.main {
+    width: var(--width);
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+}
+
+.mainView {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid green; */
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+    background: var(--text);
+    padding: 15px;
+    overflow-y: scroll;
+}
+
+.page::-webkit-scrollbar {
+    width: 5px;
+}
+
+.page::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--background);
+}
+
+.active {
+    transform: translateY(0);
+}
+
+.page:not(.active) {
+    transform: translateY(100%);
+}
+
+/* mainContainer end */
+
+/* page 1 start */
+.page h1 {
+    text-align: center;
+    font-size: 35px;
+}
+
+.listOfCategory {
+    position: absolute;
+    height: 50px;
+    width: calc(100% - 300px);
+    top: 60px;
+    border: 1px solid red;
+}
+
+.list {
+    margin-top: 50px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
+
+.card {
+    margin: 10px 20px;
+    width: 200px;
+    height: 230px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+#p1 .card {
+    height: 230px;
+    transition: all .4s;
+}
+
+.card .fa-trash-can {
+    position: absolute;
+    top: 20px;
+    right: -100%;
+    font-size: 25px;
+    color: var(--text);
+    z-index: 2;
+    padding: 15px;
+    background: var(--red);
+    border-radius: 10px;
+    transition: all .4s;
+}
+
+.card:hover .fa-trash-can {
+    right: 10px;
+}
+
+.fa-trash-can:hover {
+    background: rgb(230, 4, 4);
+}
+
+.card img {
+    width: 170px;
+    height: 170px;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+}
+
+#p1 .card:hover {
+    height: 320px;
+}
+
+.proInfo {
+    margin-top: 180px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.proInfo b {
+    color: var(--green);
+    font-weight: 400;
+}
+
+#p3 .card h3,
+#p3 .card span {
+    position: absolute;
+    left: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#p3 .card h3 {
+    left: 0;
+    padding-left: 10px;
+    bottom: 10px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#p3 .card span {
+    bottom: 6px;
+    color: var(--green);
+}
+
+
+
+#p1 .editHover {
+    position: absolute;
+    top: 20px;
+    left: -100%;
+    transition: all .4s;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#p1 .editHover i {
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    color: var(--text);
+    background: var(--green);
+}
+
+#p3 .editHover {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+    background: var(--green);
+    padding: 10px;
+    left: -100%;
+    transition: all .4s;
+}
+
+.editHover a {
+    text-decoration: none;
+    color: var(--text);
+    text-align: center;
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.editHover i {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+#p1 .card:hover .editHover {
+    left: 10px;
+}
+
+#p3 .card:hover .editHover {
+    left: 0;
+}
+
+.addItem,
+.addCate {
+    text-decoration: none;
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.addItem {
+    top: 60px;
+    right: 25px;
+}
+
+.addCate {
+    width: 190px;
+    top: 60px;
+    right: 25px;
+}
+
+.addItem i,
+.addCate i {
+    margin-left: 10px;
+}
+
+/* page 1 end */
+
+/* add tem page start */
+#additem-page {
+    width: 100%;
+    background: var(--background);
+}
+
+.container {
+    width: var(--width);
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+form {
+    width: auto;
+    height: auto;
+    background: var(--text);
+    border-radius: 20px;
+    position: relative;
+}
+
+.gird {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 250px;
+    grid-template-rows: repeat(3, 70px);
+    gap: 20px;
+}
+
+.input_container:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 5;
+}
+
+.input_container:nth-child(2) {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.input_container:nth-child(3) {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.input_container:nth-child(4) {
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+.input_container:nth-child(5) {
+    grid-area: 2 / 4 / 3 / 5;
+}
+
+.input_container:nth-child(6) {
+    grid-area: 3 / 1 / 4 / 5;
+}
+
+.input_container:nth-child(7) {
+    grid-area: 1 / 5 / 4 / 5;
+}
+
+.input_container {
+    position: relative;
+    width: 100%;
+}
+
+.input_container input,
+.input_container select {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    padding: 0 10px 0 20px;
+    font-size: 17px;
+    /* background: #f5f5f5; */
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+
+.input_container input:is(:focus, :valid),
+.input_container select:is(:focus, :valid) {
+    border: 2px solid var(--green);
+}
+
+.input_container label {
+    position: absolute;
+    top: 22px;
+    left: 15px;
+    user-select: none;
+    pointer-events: none;
+    font-size: 18px;
+    padding: 0 5px;
+    background: var(--text);
+}
+
+.input_container input:is(:focus, :valid)+label,
+.input_container select:is(:focus, :valid)+label {
+    color: var(--green);
+    transform: translateY(-35px);
+}
+
+.input_container:last-child input {
+    display: none;
+}
+
+#imageLabel {
+    all: unset;
+    /* display: block; */
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    background: var(--text);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#image_preview {
+    width: 100%;
+    height: 100%;
+    display: none;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.hide {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--text);
+    border: 1px solid #ccc;
+}
+
+.btns_ {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.cancle {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    background: #dddddd;
+    padding: 20px 23px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cancle:hover {
+    background: #c5c2c2;
+}
+
+.add_itm {
+    background: var(--green);
+    color: #fff;
+}
+
+
+/* add tem page end */
+
+/* page 2 start */
+#p2 {
+    display: flex;
+    padding: 0;
+}
+
+.users-list {
+    width: 350px;
+    /* background: var(--green); */
+    border-right: 1px solid #ccc;
+}
+
+.chatBox {
+    width: calc(100% - 350px);
+    position: relative;
+}
+
+.blank {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--text);
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+}
+
+.blank.active {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.serachBox {
+    width: 100%;
+    padding: 10px;
+    position: relative;
+}
+
+.serachBox input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    padding: 0 40px;
+    font-size: 18px;
+}
+
+.serachBox input:focus {
+    border: 2px solid var(--green);
+}
+
+.serachBox input:focus+i {
+    color: var(--green);
+}
+
+.serachBox i {
+    position: absolute;
+    top: 50%;
+    left: 35px;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+.scrollList {
+    width: 100%;
+    height: calc(100vh - 170px);
+    overflow-y: scroll;
+}
+
+.scrollList::-webkit-scrollbar {
+    width: 5px;
+}
+
+.scrollList::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #4e4a4a;
+}
+
+.userCard {
+    margin: 5px 0;
+    width: 100%;
+    display: flex;
+    height: auto;
+    align-items: center;
+    padding: 7px 10px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.userCard:hover {
+    background: #f5f5f5;
+}
+
+.userImg {
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+
+.userImg img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.userInfo {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.userInfo h2,
+.userInfo span {
+    width: 250px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.usersss {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.usersss img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.usersss h2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 260px;
+}
+
+.messTop {
+    width: 100%;
+    height: 80px;
+    /* background: #c4c1e9; */
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.messTop img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.messTop h1 {
+    /* color: var(--text); */
+    width: 220px;
+    font-size: 23px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-left: 0;
+}
+
+.messTop a {
+    text-decoration: none;
+    padding: 5px;
+    background: #64de50;
+    color: var(--text);
+    border-radius: 10px;
+}
+
+.messBody {
+    width: 100%;
+    height: 375px;
+    padding: 10px;
+    overflow-y: scroll;
+    /* background: rgb(230, 206, 206); */
+    scroll-behavior: smooth;
+}
+
+.messBody::-webkit-scrollbar {
+    width: 5px;
+}
+
+.messBody::-webkit-scrollbar-thumb {
+    background: #1d1d1d;
+}
+
+.chat {
+    width: 100%;
+    display: flex;
+    margin: 10px 0;
+}
+
+.chat p {
+    padding: 10px 15px;
+    background: #f5f4e8;
+    border-radius: 10px;
+    max-width: 350px;
+}
+
+.outgoing {
+    justify-content: end;
+}
+
+.outgoing p {
+    background: #64de50;
+}
+
+.messInput {
+    border-top: 1px solid #ccc;
+    width: 100%;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.messInput input {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 18px;
+    border: none;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 10px; */
+    outline: none;
+}
+
+.messInput i {
+    background: #3bb628;
+    color: var(--text);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* page 2 end */
+
+
+/* profile start */
+.profileCont {
+    position: absolute;
+    top: 150px;
+    right: 30px;
+    background: var(--text);
+    border-radius: 20px;
+    width: 350px;
+    z-index: 1;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.profileCont .fa-close {
+    display: none;
+}
+
+.profileCont.active {
+    top: 100px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.profileCont .fa-pen-to-square {
+    position: absolute;
+    font-size: 25px;
+    z-index: 1;
+    top: 120px;
+    right: 90px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--black);
+}
+
+.profilePic {
+    width: 100%;
+    height: 100px;
+    background: var(--background);
+    position: relative;
+}
+
+.profilePic img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid var(--text);
+}
+
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.profileInfo a {
+    margin: 15px 0;
+    text-decoration: none;
+    color: var(--text);
+    width: 200px;
+    background: var(--background);
+    height: 50px;
+    align-self: center;
+    line-height: 50px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.profileInfo a:hover {
+    background: #252525;
+}
+
+img[data-profile] {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#qnt {
+    user-select: none;
+    pointer-events: none;
+}
+
+/* profile end */
+@media (max-width:1200px) {
+    nav {
+        width: 100%;
+        padding: 0 40px;
+    }
+
+
+    .mainContainer {
+        border: 1px solid red;
+    }
+
+
+    .main {
+        width: 100%;
+    }
+
+}
+
+@media (max-width:400px) {
+    nav {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .mainContainer {
+        border: 1px solid red;
+    }
+
+
+    .main {
+        width: 100%;
+    }
+
+}
