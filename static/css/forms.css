@@ -24,6 +24,10 @@ section {
     background: var(--background);
 }
 
+#cartt {
+    height: 100vh;
+}
+
 .container {
     width: var(--width);
     height: 100%;
@@ -245,7 +249,82 @@ input[name='image'] {
 }
 
 @media (max-width:400px) {
+    section {
+        height: 150vh;
+        /* background: none; */
+    }
+
     .container {
+        width: calc(100% - 40px);
+        display: block;
+        margin: 0 auto;
+    }
+
+    .grid {
         width: 100%;
+    }
+
+    .inputs {
+        margin: 0 auto;
+    }
+
+
+    #addItemGrid {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(9, 70px);
+    }
+
+    #addFoodForm .inputs:nth-child(1) {
+        grid-area: 4 / 1 / 5 / 2;
+    }
+
+    #addFoodForm .inputs:nth-child(2) {
+        grid-area: 5 / 1 / 6 / 2;
+    }
+
+    #addFoodForm .inputs:nth-child(3) {
+        grid-area: 6 / 1 / 7 / 2;
+    }
+
+    #addFoodForm .inputs:nth-child(4) {
+        grid-area: 7 / 1 / 8 / 2;
+    }
+
+    #addFoodForm .inputs:nth-child(5) {
+        grid-area: 8 / 1 / 9 / 2;
+    }
+
+    #addFoodForm .inputs:nth-child(6) {
+        grid-area: 9 / 1 / 10 / 2;
+    }
+
+    #addFoodForm .inputs:nth-child(7) {
+        grid-area: 1 / 1 / 4 / 2;
+    }
+
+    option,
+    select {
+        background: var(--text);
+    }
+
+    #editProfileGrid {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(6, 70px);
+    }
+
+    #editProfileGrid .inputs:nth-child(1) {
+        grid-area: 1 / 1 / 4 / 2;
+    }
+
+    #editProfileGrid .inputs:nth-child(2) {
+        grid-area: 4 / 1/ 5 / 2;
+    }
+
+    #editProfileGrid .inputs:nth-child(3) {
+        grid-area: 5 / 1 / 6 / 2;
+    }
+
+    #editProfileGrid .inputs:nth-child(4) {
+        grid-area: 6 / 1 / 7 / 2;
     }
 }

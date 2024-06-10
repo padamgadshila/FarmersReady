@@ -62,3 +62,56 @@ function sendMessage() {
     messageInput.value = ""; // Clear the input field after sending
   }
 }
+
+let mainArrow = document.querySelector(".main .fa-arrow-right");
+let sideNavbar = document.querySelector(".sidenavbar");
+
+mainArrow.addEventListener("click", () => {
+  sideNavbar.classList.toggle("active");
+  mainArrow.classList.toggle("active");
+  mainArrow.classList.toggle("fa-arrow-left");
+});
+
+document.addEventListener("click", (e) => {
+  if (!sideNavbar.contains(e.target) && !mainArrow.contains(e.target)) {
+    sideNavbar.classList.remove("active");
+    mainArrow.classList.remove("active");
+    mainArrow.classList.remove("fa-arrow-left");
+  }
+});
+
+let responsiveFunctions = () => {
+  console.log(window.innerWidth);
+  if (window.innerWidth <= 400) {
+    console.log("yes");
+
+    document.querySelector(".addItem").innerHTML = `<i class="fas fa-add"></i>`;
+    document.querySelector(".addCate").innerHTML = `<i class="fas fa-add"></i>`;
+  } else {
+    console.log("no");
+    document.querySelector(
+      ".addItem"
+    ).innerHTML = `Add item <i class="fas fa-add"></i>`;
+    document.querySelector(
+      ".addCate"
+    ).innerHTML = `Add Category <i class="fas fa-add"></i>`;
+  }
+};
+window.onload = () => responsiveFunctions();
+window.onresize = () => responsiveFunctions();
+
+let usersList = document.querySelector(".users-list");
+let userCard = usersList.querySelectorAll(".userCard");
+
+userCard.forEach((card) => {
+  card.addEventListener("click", () => {
+    if (window.innerWidth <= 400) {
+      usersList.classList.toggle("active");
+    }
+  });
+});
+
+let backToPrevious = document.querySelector(".messTop .fa-arrow-left");
+backToPrevious.addEventListener("click", () => {
+  usersList.classList.remove("active");
+});
